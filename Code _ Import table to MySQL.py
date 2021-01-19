@@ -3,10 +3,10 @@ import pymysql
 import numpy as np
 
 #Note: need to clean up column name to integrate to MySQL server (i.e: remove space between words, drop unusable columns)
-country_info = pd.read_csv(r"E:\GDP\CSV file\Country and country code.csv")
-female_population = pd.read_csv(r"E:\GDP\CSV file\Female population.csv")
-male_population = pd.read_csv(r"E:\GDP\CSV file\Male population.csv")
-gdp_data = pd.read_csv(r"E:\GDP\CSV file\GDP listing by year and country.csv")
+country_info = pd.read_csv(r"[File path]\Country and country code.csv")
+female_population = pd.read_csv(r"[File path]\Female population.csv")
+male_population = pd.read_csv(r"[File path]\Male population.csv")
+gdp_data = pd.read_csv(r"[File path]\GDP listing by year and country.csv")
 
 #Set pandas display option
 pd.set_option('display.max_columns',None,'display.max_rows',10)
@@ -35,7 +35,7 @@ for i in (female_population.drop('country_name', axis = 1).columns):
         gender_ratio_f2m[i][j] = float(female_population[i][j].replace(',',''))/float(male_population[i][j].replace(',',''))
 
 #Create connection to MySQL server:
-con_sql = pymysql.connect(database = 'short_gdp_analysis', user = 'root', password = 'tr@ntu@n2808')
+con_sql = pymysql.connect(database = 'short_gdp_analysis', user = [SQL server name], password = [SQL server password])
 csr = con_sql.cursor()
 
 def data_transfer(table_name):
