@@ -1,0 +1,26 @@
+# The data source:
+All data used in this repository is obtained from World Bank, which is an open source.
+
+# The code:
+The source code for transferring data from Python to MySQL can be found in the file 'Code _ Import table to MySQL.py'. It's not guaranteed that you can run the code :P
+Obviously because I've modified the file path, AND, I've crossed out the server I used to connect Python to MySQL (e.g: the server name and password).
+Regardless, the idea is still there so if you know how then you know how. It is what it is.
+
+The source code for creating the corresponding table in SQL can be found in 'Create table _ Integration with Python.sql'.
+I purposely leave this file as an SQL file instead of a CSV file so that you can download it and run it on your own SQL server.
+Do note that the syntax of your SQL server may be different so you may need to modify the code.
+
+# The output:
+Basically, I want to know the GDP as well as the GDP per capita of the country of interest.
+I want to visualize the data using Tableau but that isn't the focus of this repository since we're transferring data, in the form of CSV file, from Python to MySQL server.
+Using the source code in Python, I'll transfer the following file to MySQL server:
+- 'Country and country code.csv'
+- 'Female population.csv'
+- 'GDP listing by year and country.csv'
+- 'Male population.csv'
+I also create two additional tables / dataframe in Python, which are 'Gender ratio f2m.csv' and 'Total population.csv'. These 2 tables are transferred to MySQL server as well.
+But why didn't I just download the population data from World Bank? 'Cuz I don't want to, I'll just sum up the male and female population to get the total population.
+Of course, not misgendering or being a gender study professionals, I'll just assume that there are male and female for the sake of simplicity.
+
+P/S: to be honest, initially I wanted to see if there's a correlation between GDP and gender ratio. But after visualizing the data with Tableau, I found it inconclusive
+or unrelated, unless maybe breaking down the data set to more categories like high income group vs low income group.
