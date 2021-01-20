@@ -13,11 +13,11 @@ pd.set_option('display.max_columns',None,'display.max_rows',10)
 
 #Clean up
 country_info = country_info.rename(columns = {'Country Name':'country_name','Country Code':'country_code'})
-female_population = female_population.drop(['Unnamed: 5','2020'], axis = 1).drop(264).replace('..',None)
+female_population = female_population.drop(['Unnamed: 5','2020'], axis = 1).drop(264).replace({'..':None})
 female_population = female_population.rename(columns = {' ':'country_name'})
-male_population = male_population.drop(['Unnamed: 5','2020'], axis = 1).drop(264).replace('..',None)
+male_population = male_population.drop(['Unnamed: 5','2020'], axis = 1).drop(264).replace({'..':None})
 male_population = male_population.rename(columns = {' ':'country_name'})
-gdp_data = gdp_data.drop(['Unnamed: 4','2020'], axis =1).drop(264).replace('..',None)
+gdp_data = gdp_data.drop(['Unnamed: 4','2020'], axis =1).drop(264).replace({'..':None})
 gdp_data = gdp_data.rename(columns = {' ':'country_name'})
 
 #Create total_population table:
